@@ -1,0 +1,11 @@
+version: "3"
+services:
+  modifier:
+    image: "modifier:latest"
+    environment:
+      NVIDIA_VISIBLE_DEVICES: "all"
+      NVIDIA_DRIVER_CAPABILITIES: "compute,utility"
+    deploy:
+      labels:
+        com.nvidia.volumes.needed: "nvidia_driver"
+    restart: always
